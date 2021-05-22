@@ -6,7 +6,11 @@ class UpdateUser extends Component{
         this.state={
             input:{ userid:localStorage.getItem("userid") },
             message:'',
-            error:{}
+            error:{},
+            updated:"No"
+        }
+        if(localStorage.getItem("userid")==null){
+            window.location.href="#/";
         }
     }
 
@@ -55,14 +59,24 @@ class UpdateUser extends Component{
             let url = "http://www.firstenquiry.com/api/myapp/saveuser.php";
             axios.post(url , jsonData).then(response=>{
                 this.setState({
-                    message:response.data.status
+                    message:response.data.status,
+                    updated:response.data.update
                 })
             })
         }
 
     }
 
+    clearData = () =>{
+        localStorage.clear();
+        window.location.href="#/login";
+    }
+
     render(){
+        let clearbtn = '';
+        if(this.state.updated=="Yes"){
+            clearbtn = <button className="btn btn-warning m-2" onClick={this.clearData}> Continue To Login </button>;
+        }
         return(
             <div className="container mt-5">
                 <div className="row">
@@ -90,7 +104,8 @@ class UpdateUser extends Component{
                             <small className="text-danger">{this.state.error["passError"]}</small>
                         </div>
                         <div className="text-center"> 
-                            <button className="btn btn-warning" onClick={this.updateInfo}> Update Info</button>
+                            <button className="btn btn-primary m-2" onClick={this.updateInfo}> Update Info</button>
+                            {clearbtn}
                         </div>
                     </div>
                     <div className="col-lg-4"></div>
