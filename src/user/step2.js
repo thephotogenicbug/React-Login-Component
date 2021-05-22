@@ -12,6 +12,8 @@ class UpdateUser extends Component{
         if(localStorage.getItem("userid")==null){
             window.location.href="#/";
         }
+
+      
     }
 
     processInput = (obj) =>{
