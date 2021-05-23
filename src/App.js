@@ -3,8 +3,11 @@ import {HashRouter, Route} from 'react-router-dom';
 import User from './user/step1';
 import UpdateUser from './user/step2';
 import Login from './user/login';
-
-const Home = () => <h1>Welcome Home, {localStorage.getItem("name")}</h1>
+import TopHeader from './Header';
+import Home from './basic';
+import Contact from './contact';
+import Education from './education';
+const Resume = () => <> <TopHeader/><h2>My Resume</h2> </>;
 function App() {
 
   return(
@@ -13,6 +16,9 @@ function App() {
       <Route exact path="/update-info" component={UpdateUser}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/home" component={Home}/>
+      <Route exact path="/contact" component={Contact}/>
+      <Route exact path="/education" component={Education}/>
+      <Route exact path="/resume" component={Resume}/>
     </HashRouter>
   )
 
