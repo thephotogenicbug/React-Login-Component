@@ -57,7 +57,7 @@ class User extends Component{
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-lg-12 text-center">
-                        <h4 className="text-primary"> Enter Your Active E-Mail ID </h4>
+                        <h4 className="text-primary"> Enter Your Active e-Mail Id </h4>
                         <p className="text-danger">{this.state.message}</p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ class User extends Component{
                             </div>
                         </div>
                         <p className="text-center mt-3">
-                           <Link to="/login"> Already Registered ! Go to Login </Link>
+                            <Link to="/login">Already Registered ! Got to Login</Link> 
                         </p>
                     </div>
                     <div className="col-lg-3"></div>

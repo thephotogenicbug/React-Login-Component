@@ -1,15 +1,18 @@
 import React from 'react';
-import {HashRouter, Route} from 'react-router-dom';
+import {HashRouter , Route} from 'react-router-dom';
+
 import User from './user/step1';
 import UpdateUser from './user/step2';
 import Login from './user/login';
-import TopHeader from './Header';
+
+import TopHeader from './header';
 import Home from './basic';
 import Contact from './contact';
 import Education from './education';
-const Resume = () => <> <TopHeader/><h2>My Resume</h2> </>;
-function App() {
+const Resume = () =>   <> <TopHeader/> <h2>My Resume</h2></>;
 
+function App() {
+  
   return(
     <HashRouter>
       <Route exact path="/" component={User}/>
@@ -22,8 +25,7 @@ function App() {
     </HashRouter>
   )
 
- 
-  
+
 }
 
 export default App;

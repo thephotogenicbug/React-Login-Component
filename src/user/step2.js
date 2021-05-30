@@ -9,11 +9,11 @@ class UpdateUser extends Component{
             error:{},
             updated:"No"
         }
+
         if(localStorage.getItem("userid")==null){
             window.location.href="#/";
         }
 
-      
     }
 
     processInput = (obj) =>{
